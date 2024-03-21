@@ -9,11 +9,20 @@ const TodoList = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const deleteTodo = (idToDelete) => {
+    setTodos(todos.filter((t) => t.id !== idToDelete));
+  };
+
   return (
     <>
       <ul>
         {todos.map((todo) => (
-          <TodoListItem key={todo.key} Name={todo.name} />
+          <TodoListItem
+            key={todo.id}
+            Id={todo.id}
+            Name={todo.name}
+            deleteTodo={deleteTodo}
+          />
         ))}
       </ul>
       <EntryForm insertTodo={insertTodo} />

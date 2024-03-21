@@ -11,7 +11,7 @@ const EntryForm = ({ insertTodo }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    insertTodo({ key: curKey, name: fieldContents, complete: false });
+    insertTodo({ id: curKey, name: fieldContents, complete: false });
     setCurKey(curKey + 1);
   };
 
